@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#1a1a2e] text-white;
+    min-height: 100vh;
+    background-attachment: fixed;
+    font-family: 'Press Start 2P', monospace, 'Courier New', monospace;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-glass-bg border border-glass-border md:border-2;
+    box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.5);
+  }
+  
+  @media (min-width: 768px) {
+    .glass-panel {
+      box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .glass-button {
+    @apply bg-glass-bg-light border border-glass-border md:border-2;
+    @apply transition-all duration-100 ease-in-out;
+  }
+
+  .glass-button:hover {
+    @apply bg-glass-hover border-glass-border-light;
+    box-shadow: 0 0 16px var(--glow-color, rgba(255, 68, 68, 0.6));
+  }
+
+  .glass-badge {
+    @apply glass-panel;
+  }
+
+  .gradient-bg {
+    background: #1a1a2e;
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 16px rgba(255, 215, 0, 0.6);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 16px rgba(76, 175, 80, 0.6);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 16px rgba(255, 68, 68, 0.6);
+  }
+
+  .glow-snow {
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.5);
+  }
+
+  .glow-yellow {
+    box-shadow: 0 0 16px rgba(255, 235, 59, 0.6);
+  }
+}
+
+@layer components {
+  .btn-defaults {
+    @apply glass-button text-sm font-medium text-accent-gold;
+    @apply hover:text-accent-gold-light focus:text-accent-gold-light focus:z-10 focus:border-glass-border-light;
+    @apply ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply focus:outline-none focus:ring-2 focus:ring-accent-gold ring-offset-transparent;
+    --glow-color: rgba(255, 68, 68, 0.6);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+  }
+
+  .badge-defaults {
+    @apply glass-badge inline-flex items-center rounded-none px-3 py-0.5 text-sm font-medium;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+  }
+
+  .a-defaults {
+    @apply underline underline-offset-4 text-accent-gold hover:text-accent-gold-light decoration-dotted;
+    @apply focus:outline-none focus:text-accent-gold-light rounded-none;
+    @apply focus-visible:ring-2 focus-visible:ring-offset-2 ring-offset-transparent focus-visible:ring-accent-gold;
+    @apply transition-all duration-100;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.8);
+  }
+
+  .a-defaults:hover {
+    @apply glow-gold;
+  }
+
+  @keyframes rotate-colors {
+    0%, 100% { border-color: #dc2626; box-shadow: 0 0 20px rgba(220, 38, 38, 0.8); }
+    33% { border-color: #16a34a; box-shadow: 0 0 20px rgba(22, 163, 74, 0.8); }
+    66% { border-color: #ffd700; box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.6); }
+    33% { box-shadow: 0 0 30px rgba(22, 163, 74, 0.8); }
+    66% { box-shadow: 0 0 25px rgba(255, 215, 0, 0.7); }
+  }
+
+  .christmas-lights {
+    animation: rotate-colors 3s ease-in-out infinite, pulse-glow 3s ease-in-out infinite;
+  }
+
+  @keyframes twinkle-red {
+    0%, 100% { background-color: #dc2626; box-shadow: 0 0 10px #dc2626, 0 0 20px #dc2626; }
+    50% { background-color: #991b1b; box-shadow: 0 0 5px #dc2626; }
+  }
+
+  @keyframes twinkle-green {
+    0%, 100% { background-color: #16a34a; box-shadow: 0 0 10px #16a34a, 0 0 20px #16a34a; }
+    50% { background-color: #15803d; box-shadow: 0 0 5px #16a34a; }
+  }
+
+  @keyframes twinkle-gold {
+    0%, 100% { background-color: #ffd700; box-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700; }
+    50% { background-color: #b8860b; box-shadow: 0 0 5px #ffd700; }
+  }
+
+  .light-red {
+    animation: twinkle-red 1.5s ease-in-out infinite;
+  }
+
+  .light-green {
+    animation: twinkle-green 1.5s ease-in-out infinite;
+    animation-delay: 0.5s;
+  }
+
+  .light-gold {
+    animation: twinkle-gold 1.5s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+}
