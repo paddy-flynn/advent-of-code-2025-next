@@ -60,11 +60,11 @@ export const usePuzzleManager = () => {
           const endTime = Date.now();
           
           if ("error" in outcome) {
-            store.set(puzzlePartErrorState(nextPuzzlePart), outcome.error);
+            store.set(puzzlePartErrorState(nextPuzzlePart), outcome.error || null);
             store.set(puzzlePartResultState(nextPuzzlePart), null);
           } else {
             store.set(puzzlePartErrorState(nextPuzzlePart), null);
-            store.set(puzzlePartResultState(nextPuzzlePart), outcome.result);
+            store.set(puzzlePartResultState(nextPuzzlePart), outcome.result || null);
           }
           
           store.set(puzzlePartTimeState(nextPuzzlePart), (endTime - startTime) / 1000.0);
