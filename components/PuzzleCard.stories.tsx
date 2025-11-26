@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { expect, within } from '@storybook/test';
 import PuzzleCard from './PuzzleCard';
 import { PuzzleContext } from '@/lib/context';
 
@@ -31,16 +32,31 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await expect(canvas.getByText(/Day 01/i)).toBeInTheDocument();
+    await expect(canvas.getByText(/Example Puzzle/i)).toBeInTheDocument();
+  },
+};
 
 export const WithLink: Story = {
   args: {
     hideLink: false,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await expect(canvas.getByRole('link', { name: /Day 01 - Example Puzzle/i })).toBeInTheDocument();
   },
 };
 
 export const WithoutLink: Story = {
   args: {
     hideLink: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    await expect(canvas.getByText(/Day 01/i)).toBeInTheDocument();
+    await expect(canvas.getByText(/Example Puzzle/i)).toBeInTheDocument();
   },
 };

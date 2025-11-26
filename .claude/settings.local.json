@@ -15,7 +15,17 @@
       "Bash(npm run build-storybook:*)",
       "Bash(yarn build-storybook)",
       "Bash(yarn add:*)",
-      "Bash(mv:*)"
+      "Bash(mv:*)",
+      "WebFetch(domain:storybook.js.org)",
+      "WebFetch(domain:storybook.js.org)",
+      "WebFetch(domain:storybook.js.org)",
+      "Bash(find:*)",
+      "Bash(yarn test:jest:*)",
+      "Bash(yarn test:storybook:*)",
+      "Bash(yarn playwright install:*)",
+      "Bash(npx playwright install:*)",
+      "Bash(ls:*)",
+      "Bash(yarn test:*)"
     ],
     "deny": []
   }
