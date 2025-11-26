@@ -1,8 +1,7 @@
-import { queuedPuzzlePartsState } from "@/lib/atoms";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { FC } from "react";
-import { RecoilRoot } from "recoil";
+import { Provider } from "jotai";
 import PlausibleProvider from "next-plausible";
 
 const App: FC<AppProps> = ({ Component, pageProps }) => (
@@ -15,13 +14,9 @@ const App: FC<AppProps> = ({ Component, pageProps }) => (
       "data-api": "/stats/api/event",
     }}
   >
-    <RecoilRoot
-      initializeState={({ set }) => {
-        set(queuedPuzzlePartsState, []);
-      }}
-    >
+    <Provider>
       <Component {...pageProps} />
-    </RecoilRoot>
+    </Provider>
   </PlausibleProvider>
 );
 

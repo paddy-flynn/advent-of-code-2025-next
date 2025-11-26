@@ -5,13 +5,13 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { FC, useContext } from "react";
-import { useRecoilValue } from "recoil";
+import { useAtomValue } from "jotai";
 import { puzzlePartStatusState } from "@/lib/atoms";
 import { PuzzlePartIDContext } from "@/lib/context";
 
 const PuzzlePartStatus: FC = () => {
   const puzzlePartID = useContext(PuzzlePartIDContext);
-  const status = useRecoilValue(puzzlePartStatusState(puzzlePartID));
+  const status = useAtomValue(puzzlePartStatusState(puzzlePartID));
   switch (status) {
     case "success":
       return (

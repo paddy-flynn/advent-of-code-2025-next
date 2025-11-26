@@ -1,12 +1,12 @@
 import { FC, useContext } from "react";
 import { PlayIcon } from "@heroicons/react/24/outline";
 import { queuedPuzzlePartsState } from "@/lib/atoms";
-import { useRecoilState } from "recoil";
+import { useAtom } from "jotai";
 import { PuzzleContext } from "@/lib/context";
 
 const RunDayButton: FC = () => {
   const { day } = useContext(PuzzleContext);
-  const [queuedPuzzleParts, setQueuedPuzzleParts] = useRecoilState(
+  const [queuedPuzzleParts, setQueuedPuzzleParts] = useAtom(
     queuedPuzzlePartsState
   );
   const onRunDay = () => {

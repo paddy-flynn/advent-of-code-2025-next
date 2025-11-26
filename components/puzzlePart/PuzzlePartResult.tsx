@@ -1,12 +1,12 @@
 import { FC, useContext } from "react";
-import { useRecoilValue } from "recoil";
+import { useAtomValue } from "jotai";
 import { puzzlePartResultState, puzzlePartStatusState } from "@/lib/atoms";
 import { PuzzlePartIDContext } from "@/lib/context";
 
 const PuzzlePartResult: FC = () => {
   const puzzlePartID = useContext(PuzzlePartIDContext);
-  const puzzlePartResult = useRecoilValue(puzzlePartResultState(puzzlePartID));
-  const puzzlePartStatus = useRecoilValue(puzzlePartStatusState(puzzlePartID));
+  const puzzlePartResult = useAtomValue(puzzlePartResultState(puzzlePartID));
+  const puzzlePartStatus = useAtomValue(puzzlePartStatusState(puzzlePartID));
 
   return (
     <span className="text-sm text-vscode-text-primary">

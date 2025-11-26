@@ -7,7 +7,10 @@
       "Bash(yarn install)",
       "Bash(curl:*)",
       "Bash(pkill:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(yarn add jotai)",
+      "Bash(yarn remove:*)",
+      "Bash(yarn build)"
     ],
     "deny": []
   }

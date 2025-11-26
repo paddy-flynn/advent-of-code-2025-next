@@ -1,61 +1,46 @@
 import { PuzzlePartStatus } from "./types";
-import { atom, atomFamily, selectorFamily } from "recoil";
+import { atom } from "jotai";
+import { atomFamily, atomWithDefault } from "jotai/utils";
 
-export const customPuzzleInputState = atomFamily<string | null, string>({
-  key: "customPuzzleInputState",
-  default: null,
-});
-
-export const puzzlePartErrorState = atomFamily<Error | null, string>({
-  key: "puzzlePartError",
-  default: null,
-});
-
-export const puzzlePartRunningState = atomFamily<boolean, string>({
-  key: "puzzlePartRunning",
-  default: false,
-});
-
-export const puzzlePartResultState = atomFamily<number | string | null, string>(
-  {
-    key: "puzzlePartResult",
-    default: null,
-  }
+export const customPuzzleInputState = atomFamily((id: string) =>
+  atom<string | null>(null)
 );
 
-export const puzzlePartTimeState = atomFamily<number | null, string>({
-  key: "puzzlePartTime",
-  default: null,
-});
+export const puzzlePartErrorState = atomFamily((id: string) =>
+  atom<Error | null>(null)
+);
 
-export const puzzlePartStatusState = selectorFamily<PuzzlePartStatus, string>({
-  key: "puzzlePartState",
-  get:
-    (puzzlePartID) =>
-    ({ get }) => {
-      const isQueued = get(queuedPuzzlePartsState).includes(puzzlePartID);
-      if (!isQueued) {
-        const result = get(puzzlePartResultState(puzzlePartID));
-        if (result === null) {
-          const error = get(puzzlePartErrorState(puzzlePartID));
-          return error === null ? "idle" : "error";
-        }
-        return "success";
+export const puzzlePartRunningState = atomFamily((id: string) =>
+  atom<boolean>(false)
+);
+
+export const puzzlePartResultState = atomFamily((id: string) =>
+  atom<number | string | null>(null)
+);
+
+export const puzzlePartTimeState = atomFamily((id: string) =>
+  atom<number | null>(null)
+);
+
+export const puzzlePartStatusState = atomFamily((puzzlePartID: string) =>
+  atomWithDefault<PuzzlePartStatus>((get) => {
+    const isQueued = get(queuedPuzzlePartsState).includes(puzzlePartID);
+    if (!isQueued) {
+      const result = get(puzzlePartResultState(puzzlePartID));
+      if (result === null) {
+        const error = get(puzzlePartErrorState(puzzlePartID));
+        return error === null ? "idle" : "error";
       }
-      const isRunning = get(currentlyRunningPuzzlePartState) === puzzlePartID;
-      if (isRunning) {
-        return "running";
-      }
-      return "queued";
-    },
-});
+      return "success";
+    }
+    const isRunning = get(currentlyRunningPuzzlePartState) === puzzlePartID;
+    if (isRunning) {
+      return "running";
+    }
+    return "queued";
+  })
+);
 
-export const currentlyRunningPuzzlePartState = atom<string | null>({
-  key: "currentlyRunningPuzzlePart",
-  default: null,
-});
+export const currentlyRunningPuzzlePartState = atom<string | null>(null);
 
-export const queuedPuzzlePartsState = atom<string[]>({
-  key: "queuedPuzzleParts",
-  default: [],
-});
+export const queuedPuzzlePartsState = atom<string[]>([]);

@@ -9,7 +9,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { Fragment, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useRecoilCallback, useRecoilValue } from "recoil";
+import { useAtomValue, useSetAtom } from "jotai";
 
 type FormData = {
   input: string;
@@ -17,7 +17,7 @@ type FormData = {
 
 const EditInputButton = () => {
   const { day, input } = useContext(PuzzleContext);
-  const customInput = useRecoilValue(customPuzzleInputState(day));
+  const customInput = useAtomValue(customPuzzleInputState(day));
   const [isOpen, setIsOpen] = useState(false);
 
   const {
@@ -32,16 +32,15 @@ const EditInputButton = () => {
     },
   });
 
-  const updateCustomizedInput = useRecoilCallback(
-    ({ set }) =>
-      (day: string, input: string | null) => {
-        set(customPuzzleInputState(day), input);
-      }
-  );
+  const setCustomPuzzleInput = useSetAtom(customPuzzleInputState(day));
+  const updateCustomizedInput = (day: string, input: string | null) => {
+    setCustomPuzzleInput(input);
+  };
 
-  const queueDay = useRecoilCallback(({ set }) => (day: string) => {
-    set(queuedPuzzlePartsState, (old) => [...old, `${day}-1`, `${day}-2`]);
-  });
+  const setQueuedPuzzleParts = useSetAtom(queuedPuzzlePartsState);
+  const queueDay = (day: string) => {
+    setQueuedPuzzleParts((old) => [...old, `${day}-1`, `${day}-2`]);
+  };
 
   function closeModal() {
     setIsOpen(false);

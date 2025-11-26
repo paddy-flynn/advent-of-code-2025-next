@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { useRecoilState } from "recoil";
+import { useAtom } from "jotai";
 import { queuedPuzzlePartsState } from "@/lib/atoms";
 import { PlayIcon } from "@heroicons/react/24/outline";
 
@@ -8,7 +8,7 @@ const RunAllButton: FC<{ allDays: string[] }> = ({ allDays }) => {
     `${day}-1`,
     `${day}-2`,
   ]);
-  const [queuedPuzzleParts, seQueuedPuzzleParts] = useRecoilState(
+  const [queuedPuzzleParts, seQueuedPuzzleParts] = useAtom(
     queuedPuzzlePartsState
   );
   return (
@@ -17,10 +17,12 @@ const RunAllButton: FC<{ allDays: string[] }> = ({ allDays }) => {
       type="button"
       disabled={allPuzzlePartIDs.every((id) => queuedPuzzleParts.includes(id))}
       onClick={() => {
-        seQueuedPuzzleParts((oldQueuedPuzzleParts) => [
-          ...oldQueuedPuzzleParts,
-          ...allPuzzlePartIDs,
-        ]);
+        seQueuedPuzzleParts((oldQueuedPuzzleParts) => {
+          const newParts = allPuzzlePartIDs.filter(
+            (id) => !oldQueuedPuzzleParts.includes(id)
+          );
+          return [...oldQueuedPuzzleParts, ...newParts];
+        });
       }}
     >
       Run All
