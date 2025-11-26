@@ -25,7 +25,7 @@ class MyDocument extends Document {
             content="rPX65SlZwkK_ky9whIIG1Fvn1MzLukZ1wc5Cqyu2TmY"
           />
         </Head>
-        <body className="font-vt323 bg-zinc-900">
+        <body>
           <Main />
           <NextScript />
         </body>

@@ -1,5 +1,5 @@
 import { Puzzle } from "@/lib/types";
-import inputFile from "./input.txt";
+import { readText } from "@/lib/readText";
 
 const parsePerElfCalories = (input: string): number[] => {
   const elfGroups = input.split(/\n\s*\n/);
@@ -23,7 +23,7 @@ async function solvePart2(input: string): Promise<number> {
 export default {
   day: "01",
   name: "Calorie Counting",
-  input: inputFile,
+  input: readText("puzzles/01/input.txt"),
   solvePart1,
   solvePart2,
 } as Puzzle;

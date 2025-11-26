@@ -9,7 +9,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        vscode: ["Consolas", "Monaco", "Menlo", ...defaultTheme.fontFamily.mono],
+        sans: ["Geist Sans", ...defaultTheme.fontFamily.sans],
+        mono: ["Geist Mono", ...defaultTheme.fontFamily.mono],
       },
       fontSize: {
         sm: ["20px", "20px"],
@@ -19,31 +20,35 @@ module.exports = {
         "2xl": ["48px", "48px"],
       },
       colors: {
-        vscode: {
-          // Backgrounds
-          'editor-bg': '#1e1e1e',
-          'sidebar-bg': '#252526',
-          'panel-bg': '#2d2d30',
-          'input-bg': '#3c3c3c',
-
-          // Text
-          'text-primary': '#d4d4d4',
-          'text-secondary': '#858585',
-          'text-muted': '#6a6a6a',
-
-          // Accents
-          'blue': '#007acc',
-          'blue-hover': '#1a8cd8',
-          'blue-light': '#0098ff',
-
-          // Status colors
-          'success': '#89d185',
-          'warning': '#cca700',
-          'error': '#f48771',
-
-          // Borders
-          'border': '#3e3e42',
-          'border-light': '#454545',
+        // Glass system
+        glass: {
+          'bg': 'rgba(17, 25, 40, 0.75)',
+          'bg-light': 'rgba(255, 255, 255, 0.05)',
+          'border': 'rgba(255, 255, 255, 0.1)',
+          'border-light': 'rgba(255, 255, 255, 0.18)',
+          'hover': 'rgba(255, 255, 255, 0.05)',
+        },
+        // Accent colors
+        accent: {
+          cyan: {
+            DEFAULT: '#00d4ff',
+            glow: 'rgba(0, 212, 255, 0.3)',
+          },
+          purple: {
+            DEFAULT: '#a855f7',
+            glow: 'rgba(168, 85, 247, 0.3)',
+          },
+          green: {
+            DEFAULT: '#10b981',
+            glow: 'rgba(16, 185, 129, 0.3)',
+          },
+        },
+        // Status colors (vibrant versions)
+        status: {
+          success: '#10b981',
+          warning: '#f59e0b',
+          error: '#ef4444',
+          info: '#06b6d4',
         },
       },
     },

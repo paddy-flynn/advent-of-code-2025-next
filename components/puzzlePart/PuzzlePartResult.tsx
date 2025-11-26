@@ -9,7 +9,7 @@ const PuzzlePartResult: FC = () => {
   const puzzlePartStatus = useAtomValue(puzzlePartStatusState(puzzlePartID));
 
   return (
-    <span className="text-sm text-vscode-text-primary">
+    <span className="text-sm text-white font-mono">
       {puzzlePartStatus === "queued" || puzzlePartStatus === "running"
         ? "..."
         : typeof puzzlePartResult === "string"

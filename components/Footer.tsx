@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="max-w-md px-4 py-6 mx-auto overflow-hidden md:py-8 lg:py-12 sm:px-6 lg:px-8">
+    <footer className="max-w-md px-4 py-6 mx-auto overflow-hidden md:py-8 lg:py-12 sm:px-6 lg:px-8 glass-panel rounded-lg">
       <div className="flex flex-col gap-6">
-        <p className="flex items-center justify-center text-base text-vscode-text-secondary gap-x-2">
+        <p className="flex items-center justify-center text-base text-white/80 gap-x-2">
           <a
             href="https://github.com/paddy-flynn/advent-of-code-2025-next"
             target={"_blank"}
@@ -15,7 +15,7 @@ const Footer = () => {
             View on GitHub
           </a>
         </p>
-        <p className="flex items-center justify-center text-vscode-text-secondary gap-x-2 font-base">
+        <p className="flex items-center justify-center text-white/80 gap-x-2 font-base">
           <span>Made with</span>
           <HeartIcon aria-hidden="true" className="w-4 h-4 mx-1 text-red-500" />
           <span>by</span>
