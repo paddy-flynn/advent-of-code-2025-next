@@ -35,10 +35,10 @@ export default async function handler(req: NextRequest) {
             fontWeight: 800,
           }}
         >
-          <div>Advent of Code 2022</div>
+          <div>Advent of Code 2025</div>
           {title && <div>{title}</div>}
           <div style={{ marginTop: 40, display: "flex" }}>
-            Solution{title ? "" : "s"} by Martin Seeler
+            Solution{title ? "" : "s"} by Patrick Flynn
           </div>
         </div>
       ),

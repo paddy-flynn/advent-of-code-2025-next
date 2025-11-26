@@ -8,10 +8,10 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Advent of Code 2022 | Solutions</title>
+        <title>Advent of Code 2025| Solutions</title>
         <meta
           name="description"
-          content="Solutions by Martin Seeler for Advent of Code 2022, written in Typescript, using Next.js, Tailwind and Recoil."
+          content="Solutions by Patrick Flynn for Advent of Code 2025, written in Typescript, using Next.js, Tailwind and Recoil."
         />
         <meta
           property="og:image"

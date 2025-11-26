@@ -37,11 +37,11 @@ const PuzzlePage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
     <>
       <Head>
         <title>
-          Advent of Code 2022 | Solution for Day {puzzle.day} - {puzzle.name}
+          Advent of Code 2025 | Solution for Day {puzzle.day} - {puzzle.name}
         </title>
         <meta
           name="description"
-          content={`Solution by Martin Seeler for Advent of Code 2022 day ${puzzle.day} - ${puzzle.name}, written in Typescript, using Next.js, Tailwind and Recoil.`}
+          content={`Solution by Patrick Flynn for Advent of Code 2025 day ${puzzle.day} - ${puzzle.name}, written in Typescript, using Next.js, Tailwind and Recoil.`}
         />
         <meta
           property="og:image"

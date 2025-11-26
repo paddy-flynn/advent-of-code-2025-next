@@ -13,12 +13,12 @@ const AllPuzzles = () => {
         <header className="sm:flex sm:items-center">
           <div className="sm:flex-auto">
             <h1 className="text-xl font-semibold text-green-400 md:text-2xl">
-              Advent of Code 2022
+              Advent of Code 2025
             </h1>
             <p className="max-w-xl mt-2 text-sm leading-6 text-zinc-300">
               These are{" "}
               <a
-                href="https://github.com/MartinSeeler/advent-of-code-next"
+                href="https://github.com/paddy-flynn/advent-of-code-2025-next"
                 target={"_blank"}
                 rel="noopener noreferrer"
                 className="a-defaults"
@@ -27,12 +27,12 @@ const AllPuzzles = () => {
               </a>{" "}
               for the{" "}
               <a
-                href="https://adventofcode.com/2022"
+                href="https://adventofcode.com/2025"
                 target={"_blank"}
                 rel="noopener noreferrer"
                 className="a-defaults"
               >
-                Advent of Code 2022
+                Advent of Code 2025
               </a>{" "}
               puzzles, written in TypeScript, using{" "}
               <a

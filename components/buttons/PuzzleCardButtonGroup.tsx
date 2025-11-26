@@ -40,7 +40,7 @@ const PuzzleCardButtonGroup: FC = () => {
               <Menu.Item>
                 {({ active }) => (
                   <a
-                    href={`https://adventofcode.com/2022/day/${parseInt(
+                    href={`https://adventofcode.com/2025/day/${parseInt(
                       day,
                       10
                     )}`}
@@ -62,7 +62,7 @@ const PuzzleCardButtonGroup: FC = () => {
               <Menu.Item>
                 {({ active }) => (
                   <a
-                    href={`https://github.com/MartinSeeler/advent-of-code-next/tree/main/puzzles/${day}/solution.ts`}
+                    href={`https://github.com/paddy-flynn/advent-of-code-2025-next/tree/main/puzzles/${day}/solution.ts`}
                     target="_blank"
                     rel="noreferrer"
                     className={classNames(

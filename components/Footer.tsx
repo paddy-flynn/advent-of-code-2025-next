@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="flex flex-col gap-6">
         <p className="flex items-center justify-center text-base text-zinc-400 gap-x-2">
           <a
-            href="https://github.com/MartinSeeler/advent-of-code-next"
+            href="https://github.com/paddy-flynn/advent-of-code-2025-next"
             target={"_blank"}
             rel="noopener noreferrer"
             className="a-defaults"
@@ -20,12 +20,12 @@ const Footer = () => {
           <HeartIcon aria-hidden="true" className="w-4 h-4 mx-1 text-red-500" />
           <span>by</span>
           <a
-            href="https://martinseeler.com?utm_source=aoc2022&utm_medium=footer"
+            href="https://paddy-flynn.com/"
             target={"_blank"}
             rel="noopener noreferrer"
             className="a-defaults"
           >
-            Martin Seeler
+            Patrick Flynn
           </a>
         </p>
       </div>

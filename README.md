@@ -1,6 +1,6 @@
 <a href="https://www.buymeacoffee.com/seeler" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-green.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;" ></a>
 
-# Advent of Code 2022
+# Advent of Code 2025
 
 - Framework: [Next.js](https://nextjs.org/)
 - State Management: [Recoil](https://recoiljs.org/)
@@ -26,7 +26,7 @@
 This application requires [Node.js v16.13+](https://nodejs.org/en/download/) and [Yarn v1.22+](https://classic.yarnpkg.com/en/docs/install).
 
 ```bash
-git clone https://github.com/MartinSeeler/advent-of-code-next.git
+git clone https://github.com/paddy-flynn/advent-of-code-2025-next.git
 cd advent-of-code-next
 yarn install
 yarn dev
