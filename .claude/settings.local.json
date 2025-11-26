@@ -6,7 +6,8 @@
       "Bash(rm:*)",
       "Bash(yarn install)",
       "Bash(curl:*)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(npm install:*)"
     ],
     "deny": []
   }
