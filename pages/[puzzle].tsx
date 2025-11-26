@@ -1,4 +1,5 @@
 import puzzles from "@/puzzles/index";
+import { loadPuzzleInputs } from "@/lib/loadPuzzleInputs";
 import {
   InferGetStaticPropsType,
   GetStaticPaths,
@@ -23,16 +24,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const puzzleDay = puzzles.find(
-    (puzzle) => slugifyPuzzle(puzzle) === params?.puzzle
-  )?.day;
-  return { props: { puzzleDay } };
+  const puzzlesWithInputs = loadPuzzleInputs(puzzles);
+  const puzzle = puzzlesWithInputs.find(
+    (p) => slugifyPuzzle(p) === params?.puzzle
+  );
+  return { props: { puzzleDay: puzzle?.day, puzzleInput: puzzle?.input || "" } };
 };
 
 const PuzzlePage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   puzzleDay,
+  puzzleInput,
 }) => {
-  const puzzle = puzzles.find((puzzle) => puzzle.day === puzzleDay)!;
+  const puzzle = { ...puzzles.find((p) => p.day === puzzleDay)!, input: puzzleInput };
   return (
     <>
       <Head>
@@ -50,7 +53,7 @@ const PuzzlePage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           )}`}
         />
       </Head>
-      <ViewSinglePuzzle puzzleDay={puzzleDay} />
+      <ViewSinglePuzzle puzzleDay={puzzleDay} puzzleInput={puzzleInput} />
     </>
   );
 };

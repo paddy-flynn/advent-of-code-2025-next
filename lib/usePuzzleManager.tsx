@@ -39,7 +39,7 @@ export const usePuzzleManager = () => {
               puzzlePartId === "1"
                 ? puzzleToSolveNext.solvePart1
                 : puzzleToSolveNext.solvePart2;
-            const res = await solveFn(customInput || puzzleToSolveNext.input);
+            const res = await solveFn(customInput || puzzleToSolveNext.input || "");
             
             if (typeof res !== "string" && isNaN(res)) {
               throw new Error("Received NaN result");

@@ -7,9 +7,9 @@ import Footer from "./Footer";
 import PuzzleCard from "./PuzzleCard";
 import ParticleBackground from "./ParticleBackground";
 
-const ViewSinglePuzzle: FC<{ puzzleDay: string }> = ({ puzzleDay }) => {
+const ViewSinglePuzzle: FC<{ puzzleDay: string; puzzleInput: string }> = ({ puzzleDay, puzzleInput }) => {
   usePuzzleManager();
-  const puzzle = puzzles.find((puzzle) => puzzle.day === puzzleDay)!;
+  const puzzle = { ...puzzles.find((puzzle) => puzzle.day === puzzleDay)!, input: puzzleInput };
   return (
     <div className="relative max-w-4xl pt-6 mx-auto md:pt-12 lg:pt-16">
       <ParticleBackground />
