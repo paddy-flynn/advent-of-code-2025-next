@@ -12,10 +12,10 @@ const AllPuzzles = () => {
       <div className="px-4 sm:px-6 lg:px-8">
         <header className="sm:flex sm:items-center">
           <div className="sm:flex-auto">
-            <h1 className="text-xl font-semibold text-green-400 md:text-2xl">
+            <h1 className="text-xl font-semibold text-vscode-blue-light md:text-2xl">
               Advent of Code 2025
             </h1>
-            <p className="max-w-xl mt-2 text-sm leading-6 text-zinc-300">
+            <p className="max-w-xl mt-2 text-sm leading-6 text-vscode-text-primary">
               These are{" "}
               <a
                 href="https://github.com/paddy-flynn/advent-of-code-2025-next"
@@ -34,34 +34,7 @@ const AllPuzzles = () => {
               >
                 Advent of Code 2025
               </a>{" "}
-              puzzles, written in TypeScript, using{" "}
-              <a
-                href="https://nextjs.org/"
-                target={"_blank"}
-                rel="noopener noreferrer"
-                className="a-defaults"
-              >
-                Next.js
-              </a>
-              ,{" "}
-              <a
-                href="https://tailwindui.com/"
-                target={"_blank"}
-                rel="noopener noreferrer"
-                className="a-defaults"
-              >
-                Tailwind CSS
-              </a>{" "}
-              and{" "}
-              <a
-                href="https://recoiljs.org/"
-                target={"_blank"}
-                rel="noopener noreferrer"
-                className="a-defaults"
-              >
-                Recoil
-              </a>
-              .
+              puzzles, written in TypeScript.
             </p>
           </div>
           <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">

@@ -11,12 +11,12 @@ const PuzzleCard: FC<{ hideLink?: boolean }> = ({ hideLink = false }) => {
   const puzzle = useContext(PuzzleContext);
   return (
     <div className="-mx-4 overflow-hidden sm:rounded-lg sm:shadow sm:-mx-6 lg:-mx-8">
-      <div className="px-4 py-5 border-b-2 border-dotted border-zinc-600 bg-zinc-800 sm:px-6 lg:px-8">
+      <div className="px-4 py-5 border-b border-vscode-border bg-vscode-panel-bg sm:px-6 lg:px-8">
         <div className="flex justify-between -mt-4 sm:items-center max-sm:flex-col">
           <div className="mt-4">
             <div className="flex items-center">
               <div className="">
-                <h3 className="text-lg font-medium text-green-400">
+                <h3 className="text-lg font-medium text-vscode-blue-light">
                   {hideLink ? (
                     <span>
                       Day {puzzle.day} - {puzzle.name}
@@ -38,7 +38,7 @@ const PuzzleCard: FC<{ hideLink?: boolean }> = ({ hideLink = false }) => {
           </div>
         </div>
       </div>
-      <ul className="divide-y-2 divide-zinc-600 divide-dotted">
+      <ul className="divide-y divide-vscode-border">
         <PuzzlePartIDContext.Provider value={`${puzzle.day}-1`}>
           <PuzzlePartRow />
         </PuzzlePartIDContext.Provider>

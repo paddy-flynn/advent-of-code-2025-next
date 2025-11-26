@@ -15,16 +15,16 @@ const PuzzlePartStatus: FC = () => {
   switch (status) {
     case "success":
       return (
-        <div className="text-green-400 badge-defaults">
-          <CheckIcon className="sm:mr-1.5 -ml-1 h-4 w-4 text-green-400" />
+        <div className="text-vscode-success badge-defaults">
+          <CheckIcon className="sm:mr-1.5 -ml-1 h-4 w-4 text-vscode-success" />
           <span className="max-sm:hidden">Solved</span>
         </div>
       );
     case "error":
       return (
-        <div className="text-red-400 badge-defaults">
+        <div className="text-vscode-error badge-defaults">
           <XMarkIcon
-            className="sm:mr-1.5 -ml-1 h-4 w-4 text-red-400"
+            className="sm:mr-1.5 -ml-1 h-4 w-4 text-vscode-error"
             aria-hidden="true"
           />
           <span className="max-sm:hidden">Failed</span>
@@ -32,10 +32,10 @@ const PuzzlePartStatus: FC = () => {
       );
     case "running":
       return (
-        <div className="text-yellow-400 badge-defaults">
+        <div className="text-vscode-warning badge-defaults">
           <ArrowPathIcon
             aria-hidden="true"
-            className="sm:mr-1.5 -ml-1 h-4 w-4 text-yellow-400 animate-spin"
+            className="sm:mr-1.5 -ml-1 h-4 w-4 text-vscode-warning animate-spin"
           />
           <span className="max-sm:hidden">Running</span>
         </div>
@@ -51,7 +51,7 @@ const PuzzlePartStatus: FC = () => {
         </div>
       );
     default:
-      return <span className="text-zinc-400 badge-defaults">Idle</span>;
+      return <span className="text-vscode-text-muted badge-defaults">Idle</span>;
   }
 };
 export default PuzzlePartStatus;

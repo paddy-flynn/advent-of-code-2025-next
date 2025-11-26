@@ -79,7 +79,7 @@ const EditInputButton = () => {
         Edit Puzzle Input
         <PencilSquareIcon
           aria-hidden="true"
-          className="w-4 h-4 ml-2 -mr-1 text-green-400 group-hover:text-zinc-800 group-focus:text-zinc-800"
+          className="w-4 h-4 ml-2 -mr-1 text-vscode-blue group-hover:text-white group-focus:text-white"
         />
       </button>
       <Transition appear show={isOpen} as={Fragment}>
@@ -93,7 +93,7 @@ const EditInputButton = () => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 transition-opacity bg-opacity-50 bg-green-400/10" />
+            <div className="fixed inset-0 transition-opacity bg-opacity-50 bg-vscode-blue/10" />
           </Transition.Child>
           <div className="fixed inset-0 z-10 overflow-y-auto">
             <div className="flex items-end justify-center min-h-full p-4 text-center sm:items-center sm:p-0">
@@ -106,7 +106,7 @@ const EditInputButton = () => {
                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
-                <Dialog.Panel className="relative w-full max-w-lg px-4 pt-5 pb-4 overflow-hidden text-left transition-all transform border border-green-400 border-dashed rounded-lg shadow-xl bg-zinc-800 sm:max-w-sm sm:my-8 sm:p-6">
+                <Dialog.Panel className="relative w-full max-w-lg px-4 pt-5 pb-4 overflow-hidden text-left transition-all transform border border-vscode-border rounded-lg shadow-xl bg-vscode-panel-bg sm:max-w-sm sm:my-8 sm:p-6">
                   <form
                     onSubmit={onSubmit}
                     onReset={() => {
@@ -118,13 +118,13 @@ const EditInputButton = () => {
                         <div className="flex justify-between">
                           <Dialog.Title
                             as="h3"
-                            className="text-lg font-medium leading-6 text-green-400"
+                            className="text-lg font-medium leading-6 text-vscode-blue-light"
                           >
                             Edit Puzzle Input
                           </Dialog.Title>
                           <button
                             type="button"
-                            className="rounded-md text-zinc-500 bg-zinc-800 hover:text-green-400 focus:outline-none focus:ring-2 focus:ring-green-400 ring-offset-zinc-800 focus:ring-offset-2"
+                            className="rounded-md text-vscode-text-secondary bg-vscode-panel-bg hover:text-vscode-blue focus:outline-none focus:ring-2 focus:ring-vscode-blue ring-offset-vscode-panel-bg focus:ring-offset-2"
                             onClick={closeModal}
                           >
                             <span className="sr-only">Close</span>
@@ -136,7 +136,7 @@ const EditInputButton = () => {
                             {...register("input")}
                             rows={10}
                             defaultValue={input}
-                            className="block w-full rounded-md shadow-sm resize-none selection:bg-green-400 selection:text-zinc-700 bg-zinc-500/10 text-zinc-300 border-zinc-500/10 focus:border-green-400 focus:ring-green-400 sm:text-sm"
+                            className="block w-full rounded-md shadow-sm resize-none selection:bg-vscode-blue selection:text-white bg-vscode-input-bg text-vscode-text-primary border-vscode-border focus:border-vscode-blue focus:ring-vscode-blue sm:text-sm"
                             placeholder="Paste your puzzle input here"
                           />
                         </div>
@@ -145,12 +145,12 @@ const EditInputButton = () => {
                     <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse sm:justify-between">
                       <button
                         type="submit"
-                        className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium bg-green-400 border border-transparent rounded-md shadow-sm text-zinc-900 hover:bg-green-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed ring-offset-zinc-900"
+                        className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium bg-vscode-blue border border-transparent rounded-md shadow-sm text-white hover:bg-vscode-blue-hover focus:outline-none focus:ring-2 focus:ring-vscode-blue focus:ring-offset-2 sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed ring-offset-vscode-editor-bg"
                       >
                         Save and Run
                         <PlayIcon
                           aria-hidden="true"
-                          className="w-4 h-4 ml-1.5 -mr-1 text-zinc-900"
+                          className="w-4 h-4 ml-1.5 -mr-1 text-white"
                         />
                       </button>
                       <button

@@ -22,9 +22,9 @@ const PuzzlePartTime: FC = () => {
     return;
   }, [status, reset]);
   return status === "queued" ? (
-    <span className="text-sm text-zinc-300">--:---</span>
+    <span className="text-sm text-vscode-text-primary">--:---</span>
   ) : (
-    <span className="text-sm text-zinc-300">
+    <span className="text-sm text-vscode-text-primary">
       {(time || elapsedTime)
         .toLocaleString(undefined, {
           minimumIntegerDigits: 2,

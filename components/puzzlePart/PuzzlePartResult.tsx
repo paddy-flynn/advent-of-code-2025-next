@@ -9,14 +9,14 @@ const PuzzlePartResult: FC = () => {
   const puzzlePartStatus = useRecoilValue(puzzlePartStatusState(puzzlePartID));
 
   return (
-    <span className="text-sm text-zinc-300">
+    <span className="text-sm text-vscode-text-primary">
       {puzzlePartStatus === "queued" || puzzlePartStatus === "running"
         ? "..."
         : typeof puzzlePartResult === "string"
-        ? puzzlePartResult
-        : puzzlePartResult === null || isNaN(puzzlePartResult)
-        ? "No Result"
-        : puzzlePartResult}
+          ? puzzlePartResult
+          : puzzlePartResult === null || isNaN(puzzlePartResult)
+            ? "No Result"
+            : puzzlePartResult}
     </span>
   );
 };

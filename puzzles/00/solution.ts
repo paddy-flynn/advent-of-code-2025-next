@@ -5,7 +5,7 @@ async function solvePart1(input: string): Promise<number> {
   const seconds = Math.floor(Math.random() * 10);
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      reject(new Error(`Failed after ${seconds} seconds`));
+      resolve(seconds);
     }, seconds * 1000);
   });
 }
