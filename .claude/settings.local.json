@@ -10,7 +10,12 @@
       "Bash(npm install:*)",
       "Bash(yarn add jotai)",
       "Bash(yarn remove:*)",
-      "Bash(yarn build)"
+      "Bash(yarn build)",
+      "Bash(npx storybook@latest init:*)",
+      "Bash(npm run build-storybook:*)",
+      "Bash(yarn build-storybook)",
+      "Bash(yarn add:*)",
+      "Bash(mv:*)"
     ],
     "deny": []
   }

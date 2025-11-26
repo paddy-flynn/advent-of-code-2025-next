@@ -3,9 +3,14 @@
     "next/core-web-vitals",
     "plugin:jsx-a11y/recommended",
     "plugin:fp/recommended",
-    "plugin:ramda/recommended"
+    "plugin:ramda/recommended",
+    "plugin:storybook/recommended"
   ],
-  "plugins": ["fp", "ramda", "jsx-a11y"],
+  "plugins": [
+    "fp",
+    "ramda",
+    "jsx-a11y"
+  ],
   "env": {
     "browser": true
   },
