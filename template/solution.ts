@@ -1,21 +1,17 @@
 import { Puzzle } from "@/lib/types";
 
 async function solvePart1(input: string): Promise<number> {
-  // eslint-disable-next-line fp/no-throw
   throw new Error("Day [[DAY]] is not implemented yet!");
 }
 
 async function solvePart2(input: string): Promise<number> {
-  // eslint-disable-next-line fp/no-throw
   throw new Error("Day [[DAY]] is not implemented yet!");
 }
-
-const inputPromise = fetch("/puzzles/[[DAY]]/input.txt").then((res) => res.text());
 
 export default {
   day: "[[DAY]]",
   name: "[[TITLE]]",
-  input: await inputPromise,
+  input: "",
   solvePart1,
   solvePart2,
 } as Puzzle;
