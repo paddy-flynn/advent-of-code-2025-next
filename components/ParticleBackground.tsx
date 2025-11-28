@@ -39,31 +39,32 @@ const ParticleBackground = memo(() => {
           },
           opacity: {
             value: { min: 0.3, max: 0.8 },
-            animation: { enable: true, speed: 0.1, sync: false }
+            animation: { enable: true, speed: 0.5, sync: true }
           },
           size: {
             value: { min: 1, max: 6 },
           },
           move: {
             enable: true,
-            speed: 0.2,
+            speed: { min: 0.1, max: 0.3 },
             direction: "bottom",
             outModes: { default: "out" },
             straight: false,
-            drift: { min: -0.5, max: 0.5 },
+            drift: 0,
             warp: false,
           },
           wobble: {
             enable: true,
-            distance: 10,
-            speed: { min: 0.2, max: 0.6 },
+            distance: 8,
+            speed: 0.3,
           },
           rotate: {
             value: { min: 0, max: 360 },
             direction: "random",
             animation: {
               enable: true,
-              speed: 0.2,
+              speed: 1,
+              sync: true,
             }
           },
         },
