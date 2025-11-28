@@ -1,9 +1,9 @@
 'use client';
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 
-const ParticleBackground = () => {
+const ParticleBackground = memo(() => {
   const [init, setInit] = useState(false);
 
   useEffect(() => {
@@ -80,6 +80,8 @@ const ParticleBackground = () => {
       className="absolute inset-0 -z-10"
     />
   );
-};
+});
+
+ParticleBackground.displayName = 'ParticleBackground';
 
 export default ParticleBackground;
