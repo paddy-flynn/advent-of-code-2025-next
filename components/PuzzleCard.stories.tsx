@@ -17,8 +17,8 @@ const meta = {
           day: '01',
           name: 'Example Puzzle',
           input: 'sample input',
-          part1: () => 'part1 result',
-          part2: () => 'part2 result',
+          solvePart1: async () => 'part1 result',
+          solvePart2: async () => 'part2 result',
         }}
       >
         <div className="w-[800px]">

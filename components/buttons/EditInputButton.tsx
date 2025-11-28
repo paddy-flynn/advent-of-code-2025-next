@@ -109,7 +109,7 @@ const EditInputButton = () => {
                   <form
                     onSubmit={onSubmit}
                     onReset={() => {
-                      setValue("input", input);
+                      setValue("input", input || "");
                     }}
                   >
                     <div className="sm:flex sm:items-start">
