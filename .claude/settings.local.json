@@ -36,7 +36,8 @@
       "Bash(sed:*)",
       "Bash(mkdir:*)",
       "Bash(cp:*)",
-      "Bash(yarn run build:*)"
+      "Bash(yarn run build:*)",
+      "Bash(cat:*)"
     ],
     "deny": []
   }

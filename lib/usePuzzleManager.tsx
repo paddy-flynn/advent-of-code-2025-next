@@ -8,10 +8,18 @@ import {
   puzzlePartErrorState,
   customPuzzleInputState,
 } from "./atoms";
-import puzzles from "@/puzzles/index";
-import { Puzzle, SolvePuzzleFn } from "./types";
+import { Puzzle, PuzzleData, SolvePuzzleFn } from "./types";
+import puzzleSolvers from "@/puzzles/index";
 
-export const usePuzzleManager = () => {
+export const usePuzzleManager = (puzzlesData: PuzzleData[]) => {
+  const puzzles: Puzzle[] = puzzlesData.map(data => {
+    const solver = puzzleSolvers.find(s => s.day === data.day);
+    return {
+      ...data,
+      solvePart1: solver?.solvePart1 || (async () => 0),
+      solvePart2: solver?.solvePart2 || (async () => 0),
+    };
+  });
   const [queuedPuzzleParts, setQueuedPuzzleParts] = useAtom(
     queuedPuzzlePartsState
   );
@@ -25,9 +33,12 @@ export const usePuzzleManager = () => {
       const nextPuzzlePart = queuedPuzzleParts[0];
       setCurrentlyRunningPuzzlePart(nextPuzzlePart);
       const [puzzleDay, puzzlePartId] = nextPuzzlePart.split("-");
+      console.log(`puzzleDay: ${puzzleDay}, puzzlePartId: ${puzzlePartId}`);
+      console.log(`puzzles: ${JSON.stringify(puzzles)}`);
       const puzzleToSolveNext: Puzzle | undefined = puzzles.find(
         (x) => x.day === puzzleDay
       );
+      console.log(`puzzleToSolveNext: ${JSON.stringify(puzzleToSolveNext)}`);
       if (puzzleToSolveNext) {
         store.set(puzzlePartTimeState(nextPuzzlePart), null);
         const startTime = Date.now();

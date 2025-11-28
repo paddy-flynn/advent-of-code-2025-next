@@ -1,21 +1,17 @@
 import { ImageResponse } from "@vercel/og";
 import { NextRequest } from "next/server";
 
-export const config = {
-  runtime: "experimental-edge",
-};
+export const runtime = "edge";
 
-// Make sure the font exists in the specified path:
-const font = fetch(new URL("../../public/VT323.ttf", import.meta.url)).then(
+const font = fetch(new URL("../../../public/VT323.ttf", import.meta.url)).then(
   (res) => res.arrayBuffer()
 );
 
-export default async function handler(req: NextRequest) {
+export async function GET(req: NextRequest) {
   try {
     const fontData = await font;
     const { searchParams } = new URL(req.url);
 
-    // ?title=<title>
     const title = searchParams.get("title")?.slice(0, 200);
 
     return new ImageResponse(
@@ -53,7 +49,7 @@ export default async function handler(req: NextRequest) {
           },
         ],
       }
-    );
+    ) as Response;
   } catch (e: any) {
     console.log(`${e.message}`);
     return new Response(`Failed to generate the image`, {

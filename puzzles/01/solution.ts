@@ -19,12 +19,10 @@ async function solvePart2(input: string): Promise<number> {
     .reduce((acc, answer) => acc + answer, 0);
 }
 
-const inputPromise = fetch("/puzzles/01/input.txt").then((res) => res.text());
-
 export default {
   day: "01",
   name: "Calorie Counting",
-  input: await inputPromise,
+  input: "",
   solvePart1,
   solvePart2,
 } as Puzzle;

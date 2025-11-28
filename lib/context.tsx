@@ -1,14 +1,12 @@
 import { createContext } from "react";
-import { Puzzle } from "./types";
+import { PuzzleData } from "./types";
 
-const emptyDefaultPuzzle: Puzzle = {
+const emptyDefaultPuzzle: PuzzleData = {
   name: "Unknown",
   day: "00",
   input: "",
-  solvePart1: () => Promise.reject("Not implemented"),
-  solvePart2: () => Promise.reject("Not implemented"),
 };
 
-export const PuzzleContext = createContext<Puzzle>(emptyDefaultPuzzle);
+export const PuzzleContext = createContext<PuzzleData>(emptyDefaultPuzzle);
 
 export const PuzzlePartIDContext = createContext<string>("00-0");

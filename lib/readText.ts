@@ -1,9 +1,7 @@
-"use server";
+// "use server";
 
-import fs from "fs";
-import path from "path";
+// import path from "path";
 
-export function readText(...segments: string[]) {
-  const file = path.join(process.cwd(), ...segments);
-  return fs.readFileSync(file, "utf8");
-}
+// export async function readText(filePath: string) {
+// return await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/puzzles/${filePath}`).then((res) => res.text())
+// }

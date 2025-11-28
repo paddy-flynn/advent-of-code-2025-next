@@ -4978,6 +4978,7 @@ __metadata:
     autoprefixer: "npm:^10.4.13"
     babel-jest: "npm:^29.3.1"
     babel-plugin-inline-import: "npm:^3.0.0"
+    baseline-browser-mapping: "npm:^2.8.32"
     concurrently: "npm:^9.2.1"
     eslint: "npm:8.29.0"
     eslint-config-next: "npm:16.0.4"
@@ -5688,12 +5689,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"baseline-browser-mapping@npm:^2.8.25":
-  version: 2.8.31
-  resolution: "baseline-browser-mapping@npm:2.8.31"
+"baseline-browser-mapping@npm:latest":
+  version: 2.8.32
+  resolution: "baseline-browser-mapping@npm:2.8.32"
   bin:
     baseline-browser-mapping: dist/cli.js
-  checksum: 10c0/e0b2fcb41bf36c5e27e122a4d4cc9e5f6b9747d31cd0bd1f771aee9c490eb1e01cd11a31db32286bd4b9221139ee332b5ab7e3893c18a4dbd0ce8915a9e180ed
+  checksum: 10c0/6c4aa0338ad177e946a27412de11769fb6474389a59cc03e13e0538d7285a94052a11525d46bb605ddb913a0c8a1180292d6f05cd4d6bc05bbf597c26bf5ce66
   languageName: node
   linkType: hard
 

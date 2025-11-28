@@ -1,6 +1,6 @@
 import slugify from "@sindresorhus/slugify";
-import { Puzzle } from "@/lib/types";
+import { PuzzleData } from "@/lib/types";
 
-export const slugifyPuzzle = (puzzle: Puzzle) => {
+export const slugifyPuzzle = (puzzle: PuzzleData) => {
   return slugify(`Day ${puzzle.day} - ${puzzle.name}`);
 };

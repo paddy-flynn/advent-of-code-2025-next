@@ -1,13 +1,15 @@
+'use client';
+
 import { PuzzleContext } from "@/lib/context";
 import { usePuzzleManager } from "@/lib/usePuzzleManager";
-import puzzles from "../puzzles";
+import { PuzzleData } from "@/lib/types";
 import RunAllButton from "./buttons/RunAllButton";
 import Footer from "./Footer";
 import PuzzleCard from "./PuzzleCard";
 import ParticleBackground from "./ParticleBackground";
 
-const AllPuzzles = () => {
-  usePuzzleManager();
+const AllPuzzles = ({ puzzles }: { puzzles: PuzzleData[] }) => {
+  usePuzzleManager(puzzles);
   return (
     <div className="relative max-w-4xl pt-6 mx-auto md:pt-12 lg:pt-16">
       <ParticleBackground />

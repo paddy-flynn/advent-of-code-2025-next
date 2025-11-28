@@ -1,15 +1,16 @@
+'use client';
+
 import { PuzzleContext } from "@/lib/context";
 import { usePuzzleManager } from "@/lib/usePuzzleManager";
 import { FC } from "react";
-import puzzles from "../puzzles";
+import { PuzzleData } from "@/lib/types";
 import ShowAllButton from "./buttons/ShowAllButton";
 import Footer from "./Footer";
 import PuzzleCard from "./PuzzleCard";
 import ParticleBackground from "./ParticleBackground";
 
-const ViewSinglePuzzle: FC<{ puzzleDay: string; puzzleInput: string }> = ({ puzzleDay, puzzleInput }) => {
-  usePuzzleManager();
-  const puzzle = { ...puzzles.find((puzzle) => puzzle.day === puzzleDay)!, input: puzzleInput };
+const ViewSinglePuzzle: FC<{ puzzle: PuzzleData; puzzles: PuzzleData[] }> = ({ puzzle, puzzles }) => {
+  usePuzzleManager(puzzles);
   return (
     <div className="relative max-w-4xl pt-6 mx-auto md:pt-12 lg:pt-16">
       <ParticleBackground />
