@@ -27,10 +27,10 @@ const ParticleBackground = () => {
         },
         fpsLimit: 60,
         particles: {
-          number: { value: 80, density: { enable: true, width: 1920, height: 1080 } },
-          color: { value: ["#d4af37", "#f0f8ff", "#90ee90", "#f4d03f"] },
+          number: { value: 120, density: { enable: true, width: 1920, height: 1080 } },
+          color: { value: ["#ffffff", "#f0f8ff", "#e6f3ff", "#d4e9ff"] },
           shape: {
-            type: ["circle", "star"],
+            type: "star",
             options: {
               star: {
                 sides: 6,
@@ -38,26 +38,32 @@ const ParticleBackground = () => {
             }
           },
           opacity: {
-            value: { min: 0.2, max: 0.5 },
-            animation: { enable: true, speed: 0.3, sync: false }
+            value: { min: 0.3, max: 0.8 },
+            animation: { enable: true, speed: 0.1, sync: false }
           },
           size: {
-            value: { min: 2, max: 5 },
+            value: { min: 1, max: 6 },
           },
           move: {
             enable: true,
-            speed: 0.4,
+            speed: 0.2,
             direction: "bottom",
             outModes: { default: "out" },
             straight: false,
-            drift: 0,
+            drift: { min: -0.5, max: 0.5 },
+            warp: false,
+          },
+          wobble: {
+            enable: true,
+            distance: 10,
+            speed: { min: 0.2, max: 0.6 },
           },
           rotate: {
             value: { min: 0, max: 360 },
             direction: "random",
             animation: {
               enable: true,
-              speed: 2,
+              speed: 0.2,
             }
           },
         },
@@ -66,7 +72,7 @@ const ParticleBackground = () => {
             onHover: { enable: true, mode: "bubble" },
           },
           modes: {
-            bubble: { distance: 100, size: 8, duration: 2, opacity: 0.8 },
+            bubble: { distance: 150, size: 10, duration: 2, opacity: 1 },
           },
         },
         detectRetina: true,
