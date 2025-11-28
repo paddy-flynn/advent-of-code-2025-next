@@ -52,7 +52,9 @@ inquirer
       trimmedTitle
     );
     mkdirSync(dir);
-    copyFileSync("./template/input.txt", `${dir}/input.txt`);
+    const publicDir = `./public/puzzles/${paddedDay}`;
+    mkdirSync(publicDir, { recursive: true });
+    copyFileSync("./template/input.txt", `${publicDir}/input.txt`);
     writeFileSync(
       `${dir}/solution.ts`,
       readFileSync("./template/solution.ts", "utf8")
