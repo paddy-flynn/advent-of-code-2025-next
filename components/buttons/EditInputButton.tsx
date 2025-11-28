@@ -117,13 +117,13 @@ const EditInputButton = () => {
                         <div className="flex justify-between">
                           <Dialog.Title
                             as="h3"
-                            className="text-lg font-medium leading-6 text-accent-cyan"
+                            className="text-lg font-medium leading-6 text-accent-gold"
                           >
                             Edit Puzzle Input
                           </Dialog.Title>
                           <button
                             type="button"
-                            className="rounded-md text-white/60 hover:text-accent-cyan focus:outline-none focus:ring-2 focus:ring-accent-cyan ring-offset-transparent focus:ring-offset-2"
+                            className="rounded-md text-white/60 hover:text-accent-gold focus:outline-none focus:ring-2 focus:ring-accent-gold ring-offset-transparent focus:ring-offset-2"
                             onClick={closeModal}
                           >
                             <span className="sr-only">Close</span>
@@ -135,7 +135,7 @@ const EditInputButton = () => {
                             {...register("input")}
                             rows={10}
                             defaultValue={input}
-                            className="block w-full rounded-md shadow-sm resize-none selection:bg-accent-cyan selection:text-white bg-glass-bg-light text-white border-glass-border focus:border-accent-cyan focus:ring-accent-cyan sm:text-sm backdrop-blur-md"
+                            className="block w-full rounded-md shadow-sm resize-none selection:bg-accent-gold selection:text-white bg-glass-bg-light text-white border-glass-border focus:border-accent-gold focus:ring-accent-gold sm:text-sm backdrop-blur-md"
                             placeholder="Paste your puzzle input here"
                           />
                         </div>

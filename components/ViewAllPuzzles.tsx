@@ -14,7 +14,7 @@ const AllPuzzles = () => {
       <div className="px-4 sm:px-6 lg:px-8">
         <header className="sm:flex sm:items-center">
           <div className="sm:flex-auto">
-            <h1 className="text-xl font-semibold text-accent-cyan md:text-2xl">
+            <h1 className="text-xl font-semibold text-accent-gold md:text-2xl">
               Advent of Code 2025
             </h1>
             <p className="max-w-xl mt-2 text-sm leading-6 text-white/90">

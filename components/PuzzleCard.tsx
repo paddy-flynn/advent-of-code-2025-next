@@ -16,7 +16,7 @@ const PuzzleCard: FC<{ hideLink?: boolean }> = ({ hideLink = false }) => {
           <div className="mt-4">
             <div className="flex items-center">
               <div className="">
-                <h3 className="text-lg font-medium text-accent-cyan">
+                <h3 className="text-lg font-medium text-accent-gold">
                   {hideLink ? (
                     <span>
                       Day {puzzle.day} - {puzzle.name}

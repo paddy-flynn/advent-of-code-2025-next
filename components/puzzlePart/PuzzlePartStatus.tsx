@@ -42,10 +42,10 @@ const PuzzlePartStatus: FC = () => {
       );
     case "queued":
       return (
-        <div className="text-accent-cyan badge-defaults glow-cyan">
+        <div className="text-accent-gold badge-defaults glow-gold">
           <RectangleStackIcon
             aria-hidden="true"
-            className="sm:mr-1.5 -ml-1 h-4 w-4 text-accent-cyan"
+            className="sm:mr-1.5 -ml-1 h-4 w-4 text-accent-gold"
           />
           <span className="max-sm:hidden">Queued</span>
         </div>

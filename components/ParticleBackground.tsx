@@ -27,29 +27,46 @@ const ParticleBackground = () => {
         },
         fpsLimit: 60,
         particles: {
-          number: { value: 50, density: { enable: true, width: 1920, height: 1080 } },
-          color: { value: ["#667eea", "#764ba2", "#f093fb"] },
-          shape: { type: "circle" },
+          number: { value: 80, density: { enable: true, width: 1920, height: 1080 } },
+          color: { value: ["#d4af37", "#f0f8ff", "#90ee90", "#f4d03f"] },
+          shape: {
+            type: ["circle", "star"],
+            options: {
+              star: {
+                sides: 6,
+              }
+            }
+          },
           opacity: {
-            value: { min: 0.1, max: 0.3 },
-            animation: { enable: true, speed: 0.5, sync: false }
+            value: { min: 0.2, max: 0.5 },
+            animation: { enable: true, speed: 0.3, sync: false }
           },
           size: {
-            value: { min: 1, max: 3 },
+            value: { min: 2, max: 5 },
           },
           move: {
             enable: true,
-            speed: 0.5,
-            direction: "none",
-            outModes: { default: "bounce" },
+            speed: 0.4,
+            direction: "bottom",
+            outModes: { default: "out" },
+            straight: false,
+            drift: 0,
+          },
+          rotate: {
+            value: { min: 0, max: 360 },
+            direction: "random",
+            animation: {
+              enable: true,
+              speed: 2,
+            }
           },
         },
         interactivity: {
           events: {
-            onHover: { enable: true, mode: "grab" },
+            onHover: { enable: true, mode: "bubble" },
           },
           modes: {
-            grab: { distance: 140, links: { opacity: 0.2 } },
+            bubble: { distance: 100, size: 8, duration: 2, opacity: 0.8 },
           },
         },
         detectRetina: true,

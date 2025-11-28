@@ -20,35 +20,44 @@ module.exports = {
         "2xl": ["48px", "48px"],
       },
       colors: {
-        // Glass system
+        // Glass system with warm Christmas tones
         glass: {
-          'bg': 'rgba(17, 25, 40, 0.75)',
-          'bg-light': 'rgba(255, 255, 255, 0.05)',
-          'border': 'rgba(255, 255, 255, 0.1)',
-          'border-light': 'rgba(255, 255, 255, 0.18)',
-          'hover': 'rgba(255, 255, 255, 0.05)',
+          'bg': 'rgba(15, 35, 30, 0.75)',
+          'bg-light': 'rgba(212, 175, 55, 0.08)',
+          'border': 'rgba(212, 175, 55, 0.2)',
+          'border-light': 'rgba(212, 175, 55, 0.35)',
+          'hover': 'rgba(212, 175, 55, 0.12)',
         },
-        // Accent colors
+        // Christmas accent colors
         accent: {
-          cyan: {
-            DEFAULT: '#00d4ff',
-            glow: 'rgba(0, 212, 255, 0.3)',
-          },
-          purple: {
-            DEFAULT: '#a855f7',
-            glow: 'rgba(168, 85, 247, 0.3)',
+          gold: {
+            DEFAULT: '#d4af37',
+            light: '#f4d03f',
+            glow: 'rgba(212, 175, 55, 0.4)',
           },
           green: {
-            DEFAULT: '#10b981',
-            glow: 'rgba(16, 185, 129, 0.3)',
+            DEFAULT: '#1a5c47',
+            dark: '#0f4c3a',
+            light: '#2d7a5f',
+            glow: 'rgba(26, 92, 71, 0.3)',
+          },
+          red: {
+            DEFAULT: '#a52a4a',
+            dark: '#8b1e3f',
+            light: '#c73e5d',
+            glow: 'rgba(165, 42, 74, 0.3)',
+          },
+          snow: {
+            DEFAULT: '#f0f8ff',
+            glow: 'rgba(240, 248, 255, 0.3)',
           },
         },
-        // Status colors (vibrant versions)
+        // Christmas-themed status colors
         status: {
-          success: '#10b981',
-          warning: '#f59e0b',
-          error: '#ef4444',
-          info: '#06b6d4',
+          success: '#2d7a5f',
+          warning: '#d4af37',
+          error: '#a52a4a',
+          info: '#f4d03f',
         },
       },
     },

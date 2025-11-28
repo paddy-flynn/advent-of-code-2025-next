@@ -47,8 +47,8 @@ const PuzzleCardButtonGroup: FC = () => {
                     target="_blank"
                     rel="noreferrer"
                     className={classNames(
-                      active ? "bg-accent-cyan/20 text-white" : "text-accent-cyan",
-                      "flex items-center justify-between px-4 py-2 text-sm hover:bg-accent-cyan/20 hover:text-white transition-all duration-200"
+                      active ? "bg-accent-gold/20 text-white" : "text-accent-gold",
+                      "flex items-center justify-between px-4 py-2 text-sm hover:bg-accent-gold/20 hover:text-white transition-all duration-200"
                     )}
                   >
                     Puzzle Description
@@ -66,8 +66,8 @@ const PuzzleCardButtonGroup: FC = () => {
                     target="_blank"
                     rel="noreferrer"
                     className={classNames(
-                      active ? "bg-accent-cyan/20 text-white" : "text-accent-cyan",
-                      "flex items-center justify-between px-4 py-2 text-sm hover:bg-accent-cyan/20 hover:text-white transition-all duration-200"
+                      active ? "bg-accent-gold/20 text-white" : "text-accent-gold",
+                      "flex items-center justify-between px-4 py-2 text-sm hover:bg-accent-gold/20 hover:text-white transition-all duration-200"
                     )}
                   >
                     Source Code
