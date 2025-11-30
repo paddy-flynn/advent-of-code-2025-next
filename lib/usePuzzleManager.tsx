@@ -32,12 +32,10 @@ export const usePuzzleManager = (puzzlesData: PuzzleData[]) => {
       const nextPuzzlePart = queuedPuzzleParts[0];
       setCurrentlyRunningPuzzlePart(nextPuzzlePart);
       const [puzzleDay, puzzlePartId] = nextPuzzlePart.split("-");
-      console.log(`puzzleDay: ${puzzleDay}, puzzlePartId: ${puzzlePartId}`);
-      console.log(`puzzles: ${JSON.stringify(puzzles)}`);
       const puzzleToSolveNext: Puzzle | undefined = puzzles.find(
         (x) => x.day === puzzleDay
       );
-      console.log(`puzzleToSolveNext: ${JSON.stringify(puzzleToSolveNext)}`);
+    
       if (puzzleToSolveNext) {
         store.set(puzzlePartTimeState(nextPuzzlePart), null);
         const startTime = Date.now();
@@ -49,7 +47,6 @@ export const usePuzzleManager = (puzzlesData: PuzzleData[]) => {
               puzzlePartId === "1"
                 ? puzzleToSolveNext.solvePart1
                 : puzzleToSolveNext.solvePart2;
-            console.log(`Solving puzzle ${puzzleDay} Part ${puzzlePartId} with input ${customInput} , ${puzzleToSolveNext.input}`);
             const res = await solveFn(customInput || puzzleToSolveNext.input || "");
             
             if (typeof res !== "string" && isNaN(res)) {

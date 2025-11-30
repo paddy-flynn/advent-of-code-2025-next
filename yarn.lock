@@ -4223,6 +4223,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/lodash@npm:^4":
+  version: 4.17.21
+  resolution: "@types/lodash@npm:4.17.21"
+  checksum: 10c0/73cb006e047d8871e9d63f3a165543bf16c44a5b6fe3f9f6299e37cb8d67a7b1d55ac730959a81f9def510fd07232ff7e30e05413e5d5a12793baad84ebe36c3
+  languageName: node
+  linkType: hard
+
 "@types/mdx@npm:^2.0.0":
   version: 2.0.13
   resolution: "@types/mdx@npm:2.0.13"
@@ -5029,6 +5036,7 @@ __metadata:
     "@tsparticles/slim": "npm:^3.9.1"
     "@types/inquirer": "npm:^9.0.3"
     "@types/lcm": "npm:^0.0.0"
+    "@types/lodash": "npm:^4"
     "@types/node": "npm:^18.11.11"
     "@types/ramda": "npm:^0.28.20"
     "@types/react": "npm:^18.3.3"
@@ -5054,6 +5062,7 @@ __metadata:
     jest-text-transformer: "npm:^1.0.4"
     jotai: "npm:^2.15.1"
     lcm: "npm:^0.0.3"
+    lodash: "npm:^4.17.21"
     lucide-react: "npm:^0.555.0"
     next: "npm:16.0.4"
     next-sitemap: "npm:^4.2.3"

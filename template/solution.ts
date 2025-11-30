@@ -1,4 +1,5 @@
 import { Puzzle } from "@/lib/types";
+import * as _ from 'lodash';
 
 async function solvePart1(input: string): Promise<number> {
   console.log(`input: ${input}`);
