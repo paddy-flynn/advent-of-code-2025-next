@@ -1,8 +1,8 @@
 import puzzle from "./solution";
 
 describe("Day 02 - Historian Hysteria", () => {
-  it.each([[`
-3   4
+  it.each([[
+`3   4
 4   3
 2   5
 1   3
@@ -15,8 +15,8 @@ describe("Day 02 - Historian Hysteria", () => {
     }
   );
 
-  it.only.each([[`
-3   4
+  it.each([[
+    `3   4
 4   3
 2   5
 1   3
