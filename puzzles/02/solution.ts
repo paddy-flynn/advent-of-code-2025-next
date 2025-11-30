@@ -21,12 +21,7 @@ async function solvePart1(input: string): Promise<number> {
   leftList.sort((a, b) => a - b);
   rightList.sort((a, b) => a - b);
   
-
-  console.log(`leftList: ${leftList}`);
-  console.log(`rightList: ${rightList}`);
-
   const result = leftList.reduce((acc, left, index) => {
-    console.log(`left: ${left}, index: ${index}, rightList[index]: ${rightList[index]}`);
     return acc + Math.abs(left - rightList[index])
   }, 0);
   
