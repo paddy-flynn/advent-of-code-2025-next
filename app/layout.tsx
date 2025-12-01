@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import { Providers } from "./providers";
 import { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Advent of Code",
@@ -40,6 +41,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   );
