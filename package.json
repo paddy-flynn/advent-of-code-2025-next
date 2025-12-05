@@ -31,7 +31,7 @@
     "lcm": "^0.0.3",
     "lodash": "^4.17.21",
     "lucide-react": "^0.555.0",
-    "next": "16.0.4",
+    "next": "16.0.7",
     "next-sitemap": "^4.2.3",
     "ramda": "^0.28.0",
     "ramda-adjunct": "^3.4.0",
