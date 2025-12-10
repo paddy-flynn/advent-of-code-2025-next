@@ -1,5 +1,4 @@
 import { Puzzle } from "@/lib/types";
-import * as _ from 'lodash';
 
 type PointString = string;
 type PointPair = [PointString, PointString];
@@ -14,7 +13,7 @@ const dist = (pointsTuple: PointPair): number => {
 };
 
 
-const runClustering = (points: PointString[], maxEdges: number | undefined = undefined, returnLastPair: boolean = false) => {
+const runClustering = (points: PointString[], maxEdges: number | undefined = undefined, returnLastPair: boolean = false): Set<PointString>[] | PointPair => {
   const pairs: PairWithDistance[] = points
     .flatMap((a: PointString, i: number) =>
       points.slice(i + 1).map((b: PointString): PairWithDistance => [dist([a, b]), a, b])
@@ -87,9 +86,8 @@ async function solvePart1(input: string): Promise<number> {
   const points: PointString[] = input.split('\n').filter(p => p.length > 0);
   if (points.length === 0) return 0;
 
-  const arr = runClustering(points, 1000);
+  const arr = runClustering(points, 1000) as Set<PointString>[];
 
-  // Calculate the product of the sizes of the top 3 largest clusters
   const result = arr.slice(0, 3).reduce((a, c) => a * c.size, 1);
 
   return result;
