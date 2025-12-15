@@ -46,7 +46,8 @@
       "Bash(node:*)",
       "Bash(git commit:*)",
       "Bash(npm run typecheck:*)",
-      "Bash(npm run lint:*)"
+      "Bash(npm run lint:*)",
+      "WebFetch(domain:gitlab.com)"
     ],
     "deny": []
   }
